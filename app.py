@@ -549,7 +549,7 @@ with gr.Blocks(elem_id="app", theme=theme, css=css, fill_width=True) as demo:
                 """# Step 3. Train
 <p style="margin-top:0">Press start to start training.</p>
 """, elem_classes="group_padding")
-            start = gr.Button("Start training", visible=False)
+            start = gr.Button("Start training", visible=True)
             output_components.append(start)
             train_script = gr.Textbox(label="Train script", max_lines=100, interactive=True)
             train_config = gr.Textbox(label="Train config", max_lines=100, interactive=True)
