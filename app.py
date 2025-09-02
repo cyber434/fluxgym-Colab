@@ -90,13 +90,14 @@ def create_dataset(destination_folder, size, *inputs):
         os.makedirs(destination_folder)
 
     for index, image in enumerate(images):
-        ext = os.path.splitext(images)[1].lower()  # 获取文件扩展名
-        if ext in [".txt"]:
-            print(f"跳过非图像文件: {images}")
-            continue
+       
         # copy the images to the datasets folder
         new_image_path = shutil.copy(image, destination_folder)
-
+        print(f"image像文件: {image}")
+        ext = os.path.splitext(new_image_path)[1].lower()  # 获取文件扩展名
+        if ext in [".txt"]:
+            print(f"跳过非图像文件: {new_image_path}")
+            continue
         # resize the images
         resize_image(new_image_path, new_image_path, size)
 
