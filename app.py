@@ -68,7 +68,7 @@ def hide_captioning():
 
 def resize_image(image_path, output_path, size):
     ext = os.path.splitext(image_path)[1].lower()  # 获取文件扩展名
-    if ext in [".txt", ".npz"]:
+    if ext in [".txt"]:
         print(f"跳过非图像文件: {image_path}")
         return
     with Image.open(image_path) as img:
@@ -514,7 +514,7 @@ with gr.Blocks(elem_id="app", theme=theme, css=css, fill_width=True) as demo:
 """, elem_classes="group_padding")
             with gr.Group():
                 images = gr.File(
-                    file_types=["image", ".txt"],
+                    file_types=["image"],
                     label="Upload your images",
                     file_count="multiple",
                     interactive=True,
