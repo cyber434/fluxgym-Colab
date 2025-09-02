@@ -518,7 +518,7 @@ with gr.Blocks(elem_id="app", theme=theme, css=css, fill_width=True) as demo:
 """, elem_classes="group_padding")
             with gr.Group():
                 images = gr.File(
-                    file_types=["image"],
+                    file_types=["image",".txt"],
                     label="Upload your images",
                     file_count="multiple",
                     interactive=True,
