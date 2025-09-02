@@ -67,10 +67,10 @@ def hide_captioning():
     return gr.update(visible=False), gr.update(visible=False)
 
 def resize_image(image_path, output_path, size):
-    # ext = os.path.splitext(image_path)[1].lower()  # 获取文件扩展名
-    # if ext in [".txt"]:
-    #     print(f"跳过非图像文件: {image_path}")
-    #     return
+    ext = os.path.splitext(image_path)[1].lower()  # 获取文件扩展名
+    if ext in [".txt"]:
+        print(f"跳过非图像文件: {image_path}")
+        return
     with Image.open(image_path) as img:
         width, height = img.size
         if width < height:
