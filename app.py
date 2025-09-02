@@ -92,7 +92,7 @@ def create_dataset(destination_folder, size, *inputs):
     for index, image in enumerate(images):
         ext = os.path.splitext(images)[1].lower()  # 获取文件扩展名
         if ext in [".txt"]:
-                print(f"跳过非图像文件: {images}")
+            print(f"跳过非图像文件: {images}")
             continue
         # copy the images to the datasets folder
         new_image_path = shutil.copy(image, destination_folder)
